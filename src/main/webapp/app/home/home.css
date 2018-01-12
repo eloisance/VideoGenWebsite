@@ -24,3 +24,11 @@ only screen and (                min-resolution: 2dppx) {
     }
 }
 
+
+.btn {
+    cursor: pointer;
+}
+
+b {
+    font-weight: bold;
+}
