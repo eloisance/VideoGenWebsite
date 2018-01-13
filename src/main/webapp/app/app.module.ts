@@ -8,6 +8,7 @@ import { VideoGenWebsiteSharedModule, UserRouteAccessService } from './shared';
 import { VideoGenWebsiteAppRoutingModule} from './app-routing.module';
 import { VideoGenWebsiteHomeModule } from './home/home.module';
 import { VideoGenWebsiteVideoRandomModule } from './video-random/video-random.module';
+import { VideoGenWebsiteVideoSetupModule } from './video-setup/video-setup.module';
 import { VideoGenWebsiteAdminModule } from './admin/admin.module';
 import { VideoGenWebsiteAccountModule } from './account/account.module';
 import { VideoGenWebsiteEntityModule } from './entities/entity.module';
@@ -33,6 +34,7 @@ import {
         VideoGenWebsiteSharedModule,
         VideoGenWebsiteHomeModule,
         VideoGenWebsiteVideoRandomModule,
+        VideoGenWebsiteVideoSetupModule,
         VideoGenWebsiteAdminModule,
         VideoGenWebsiteAccountModule,
         VideoGenWebsiteEntityModule,
