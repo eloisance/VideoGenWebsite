@@ -98,6 +98,13 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- start videogen-->
+        <dependency>
+            <groupId>com.eloisance.idm</groupId>
+            <artifactId>videogen</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- end videogen-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
