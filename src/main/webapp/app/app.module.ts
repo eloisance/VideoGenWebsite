@@ -7,6 +7,7 @@ import { Ng2Webstorage } from 'ngx-webstorage';
 import { VideoGenWebsiteSharedModule, UserRouteAccessService } from './shared';
 import { VideoGenWebsiteAppRoutingModule} from './app-routing.module';
 import { VideoGenWebsiteHomeModule } from './home/home.module';
+import { VideoGenWebsiteVideoRandomModule } from './video-random/video-random.module';
 import { VideoGenWebsiteAdminModule } from './admin/admin.module';
 import { VideoGenWebsiteAccountModule } from './account/account.module';
 import { VideoGenWebsiteEntityModule } from './entities/entity.module';
@@ -31,6 +32,7 @@ import {
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         VideoGenWebsiteSharedModule,
         VideoGenWebsiteHomeModule,
+        VideoGenWebsiteVideoRandomModule,
         VideoGenWebsiteAdminModule,
         VideoGenWebsiteAccountModule,
         VideoGenWebsiteEntityModule,
@@ -41,7 +43,7 @@ import {
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
-        FooterComponent
+        FooterComponent,
     ],
     providers: [
         ProfileService,
