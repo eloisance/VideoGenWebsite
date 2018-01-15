@@ -7,7 +7,7 @@
 
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
-                <span *ngIf="account"> Hello "{{account.login}}".</span>
+                <span *ngIf="account">Bonjour, vous êtes connecté en tant que "{{account.login}}".</span>
             </div>
         </div>
 
@@ -24,8 +24,15 @@
             dans un même bloc. A la fin de chaque configuration,
             on joue la variante de vidéo correspondante.</p>
 
-        <button class="btn btn-primary" routerLink="video-random">Mode aléatoire</button>
-        <button class="btn btn-warning" routerLink="video-setup">Mode configurateur</button>
+        <div [ngSwitch]="!isAuthenticated()">
+            <div class="alert alert-warning" *ngSwitchCase="true">
+                Vous devez être connecté pour accéder à la génération de vidéo
+            </div>
+        </div>
+        <div *ngIf="isAuthenticated()">
+            <button class="btn btn-primary" routerLink="video-random">Mode aléatoire</button>
+            <button class="btn btn-warning" routerLink="video-setup">Mode configurateur</button>
+        </div>
 
     </div>
 </div>
