@@ -2,9 +2,11 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { VIDEO_RANDOM_ROUTE, VideoRandomComponent } from './';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     imports: [
+        CommonModule,
         RouterModule.forChild([ VIDEO_RANDOM_ROUTE ])
     ],
     declarations: [

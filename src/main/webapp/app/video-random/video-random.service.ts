@@ -14,7 +14,7 @@ export class VideoRandomService {
     }
 
     download(videoName): any {
-        return this.http.get(SERVER_API_URL + 'api/videogen/download/' + videoName).map((res: Response) => res);
+        return this.http.get(SERVER_API_URL + 'api/videogen/download/' + videoName).map((res: Response) => res.json());
     }
 
 }

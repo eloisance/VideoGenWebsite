@@ -1,3 +1,0 @@
-file 'samples/intro.mp4'
-file 'samples/sun.mp4'
-file 'samples/intro.mp4'

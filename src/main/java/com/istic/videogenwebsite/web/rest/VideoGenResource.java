@@ -1,6 +1,7 @@
 package com.istic.videogenwebsite.web.rest;
 
 import eloisance.VideoGenTest1;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.FileSystemResource;
@@ -8,10 +9,10 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.xml.bind.DatatypeConverter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
 
 /**
@@ -50,13 +51,17 @@ public class VideoGenResource {
     }
 
 
-    @GetMapping(value = "videogen/download/{videoName}", headers = "Accept=*/*")
-    @ResponseBody
-    public FileSystemResource downloadVideoOld(@PathVariable("videoName") String videoName) {
-        File file = new File("data/" + videoName + ".mp4");
-        System.out.println("download file : " + file.getName());
-        System.out.println("download file path : " + file.getAbsolutePath());
-        return new FileSystemResource(file);
+    @GetMapping(value = "videogen/download/{videoName}")
+    public String downloadVideo(@PathVariable("videoName") String videoName, HttpServletResponse response) {
+        String base64 = "";
+        try {
+            base64 = DatatypeConverter.printBase64Binary(
+                Files.readAllBytes(Paths.get("data/" + videoName + ".mp4"))
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "{\"base64\":\""+base64+"\"}";
     }
 
 }

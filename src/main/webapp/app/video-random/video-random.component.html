@@ -1,3 +1,8 @@
-<p>Génération de la vidéo: "{{ videoName }}"</p>
-
-<video src="" width="400" height="222" controls="controls"></video>
+<div class="text-center">
+    <p>Génération de la vidéo: "{{ videoName }}"</p>
+    <p *ngIf="!videoBase64" style="padding: 50px 0; font-weight: bold;">Chargement de la vidéo en cours.<br />Veuillez patienter.</p>
+    <video *ngIf="videoBase64" autoplay src="data:video/mp4;base64,{{videoBase64}}" width="500" height="300" controls="controls"></video>
+</div>
+<div class="text-center">
+    <button *ngIf="videoBase64" (click)="reGenerateVideoRandom()" style="width: 250px; cursor: pointer;" class="btn btn-primary">Retry !</button>
+</div>
